@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>宝可梦游戏</title>
+    <link rel="stylesheet" href="/css/globals.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script>
+      const showSlideImg = (index) => {
+        // 选出 .slideshow > img，对每个 img 执行一次给定的函数（闭包，接受两个参数 i 和 e）
+        $(".slideshow > img").each((i, e) => {
+          if (i === index) {
+            // 显示 e
+            e.style.display = "block";
+          } else {
+            // 隐藏 e
+            e.style.display = "none";
+          }
+        });
+      };
+
+      // 记住当前显示的图片的下标
+      let currentSlideImg = 0;
+
+      // 当网页加载好时，执行一个函数
+      $(document).ready(() => {
+        // 先显示出默认的第 0 张图片
+        showSlideImg(currentSlideImg);
+
+        // 规划一个定时器，每 3000 毫秒，执行一遍传给 setInterval 的函数
+        setInterval(() => {
+          currentSlideImg++;
+          if (currentSlideImg === 5) {
+            currentSlideImg = 0;
+          }
+          showSlideImg(currentSlideImg);
+        }, 3000);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="ppt">
+      <div class="slideshow">
+        <img
+          src="/images/game-slide-01.jpg"
+          alt="PTCG 剑盾 新卡组礼盒即将发售"
+        />
+        <img
+          src="/images/game-slide-02.jpg"
+          alt="PTCG 剑盾 全新 Vmax 卡牌即将发售"
+        />
+        <img
+          src="/images/game-slide-03.jpg"
+          alt="PTCG:对战排队组合将于4月15日发售"
+        />
+        <img
+          src="/images/game-slide-04.png"
+          alt="PTCG 太阳·月亮 卡组构筑进阶礼盒即将发售"
+        />
+        <img
+          src="/images/game-slide-05.png"
+          alt="PTCG 游戏：宝可梦卡牌模块正式上线"
+        />
+      </div>
+      <div class="buttons">
+        <button onclick="showSlideImg(0)">1</button>
+        <button onclick="showSlideImg(1)">2</button>
+        <button onclick="showSlideImg(2)">3</button>
+        <button onclick="showSlideImg(3)">4</button>
+        <button onclick="showSlideImg(4)">5</button>
+      </div>
+    </div>
+  </body>
+</html>

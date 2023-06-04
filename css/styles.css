@@ -1,0 +1,307 @@
+.navbar {
+  background: linear-gradient(to bottom, #fcfcfc 90%, #e5e5e5 100%);
+  overflow: clip;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbarWrapper {
+  display: flex;
+  margin: 0.5rem 0.5rem 0rem 0.5rem;
+}
+
+.docMain {
+  padding-top: 5.5rem;
+}
+
+.logo > img {
+  height: 4.5rem;
+}
+
+ul.links {
+  align-items: end;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+}
+
+ul.links a {
+  display: block;
+}
+
+ul.links a:any-link {
+  color: unset;
+}
+
+ul.links button {
+  background: none;
+  border: none;
+  color: unset;
+  display: block;
+  font-size: unset;
+  line-height: 1;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+ul.links button:hover {
+  cursor: pointer;
+}
+
+ul.links > li {
+  --class-links-li-border-radius: 12px;
+  --class-links-li-background-color: gray;
+  --class-links-li-foreground-color: var(--color-background-main);
+
+  background-color: var(--class-links-li-background-color);
+  border-top-left-radius: var(--class-links-li-border-radius);
+  border-top-right-radius: var(--class-links-li-border-radius);
+  box-shadow: 0 0 8px silver;
+  box-sizing: border-box;
+  color: var(--class-links-li-foreground-color);
+  flex-grow: 1;
+  font-size: 1.25rem;
+  height: 50%;
+  line-height: 1;
+  margin: 0 0.125rem;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+ul.links > li:hover,
+ul.links > li.current {
+  flex-grow: 10;
+  font-size: 2.875rem;
+  height: 90%;
+  transition: all 0.25s;
+}
+
+ul.links > li.red {
+  --class-links-li-background-color: tomato;
+}
+
+ul.links > li.green {
+  --class-links-li-background-color: yellowgreen;
+}
+
+ul.links > li.blue {
+  --class-links-li-background-color: dodgerblue;
+}
+
+ul.links > li.yellow {
+  --class-links-li-background-color: gold;
+}
+
+.toTop {
+  position: fixed; /* 让元素在屏幕中的位置固定 */
+  right: 12px; /* 离右边缘 10px */
+  bottom: 40px; /* 离下边缘 10px */
+  z-index: 1000;
+}
+
+.toTop button {
+  background: white;
+  border: none;
+  box-shadow: 0 0 16px silver;
+  border-radius: 20px;
+  color: white;
+  font-size: 3rem;
+  padding: 0.5rem 1.5rem;
+  text-shadow: 0 0 8px #606060;
+}
+
+.pokedexWrapper {
+  padding: 2.5rem;
+}
+
+.card {
+  background: url("/images/list_pokemon_bg_light.png") no-repeat;
+  border-radius: 20px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+  height: 492px;
+  padding: 0;
+  transition: all 1s;
+}
+
+.card:hover {
+  box-shadow: 0 -12px 24px rgba(0, 0, 0, 0.2); /* 透明阴影 */
+  transform: scale(1.1) translateY(-2px) perspective(1200px) rotateX(-15deg);
+  transition: all 0.25s;
+}
+
+.card img {
+  height: 280px;
+}
+
+.lines {
+  /* Flex 自动换行解决方案 */
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: start; */
+
+  /* Grid 自动换行解决方案
+    1) 激活网格
+    2) 每个单元格 310px，每行包含尽可能多的格
+    3) 单元格之间最小的间距
+    4) 与 flex 的同名属性作用相同，指定一行多出来的空余如何分配 */
+  display: grid; /* 1 */
+  grid-template-columns: repeat(auto-fill, 310px); /* 2 */
+  grid-gap: 1rem; /* 3 */
+  justify-content: space-between; /* 4 */
+}
+
+.min_head {
+  color: rgb(48, 48, 180);
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.min_body {
+  color: black;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.ps {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 3.15rem;
+}
+
+.ps > span {
+  --class-ps-span-background: #a5a299;
+  --class-ps-span-color: aliceblue;
+  --class-ps-span-shadow: silver;
+
+  border-radius: 20px;
+  background-color: var(--class-ps-span-background);
+  color: var(--class-ps-span-color);
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5rem;
+  padding: 0.05rem 1.75rem;
+  box-shadow: 0 0 8px var(--class-ps-span-shadow);
+}
+
+.ps > span.grass {
+  --class-ps-span-background: #7dbe13;
+  --class-ps-span-shadow: #70a20b;
+}
+
+.ps > span.poison {
+  --class-ps-span-background: #9527a8;
+  --class-ps-span-shadow: #702086;
+}
+
+.ps > span.fire {
+  --class-ps-span-background: #c43d18;
+  --class-ps-span-shadow: #a7260f;
+}
+
+.ps > span.flight {
+  --class-ps-span-background: #2799a8;
+  --class-ps-span-shadow: #165670;
+}
+
+.ps > span.dragon {
+  --class-ps-span-background: #6b2387;
+  --class-ps-span-shadow: #511868;
+}
+
+.ps > span.water {
+  --class-ps-span-background: #2566a7;
+  --class-ps-span-shadow: #164574;
+}
+
+.ps > span.wrestle {
+  --class-ps-span-background: #a84e27;
+  --class-ps-span-shadow: #863c1a;
+}
+
+.ps > span.steel {
+  --class-ps-span-background: #787c84;
+  --class-ps-span-shadow: #60636a;
+}
+
+.ps > span.electricity {
+  --class-ps-span-background: #ffea00;
+  --class-ps-span-color: #ab6c00;
+  --class-ps-span-shadow: #d6a401;
+}
+
+.ps > span.psy {
+  --class-ps-span-background: #ca58ca;
+  --class-ps-span-shadow: #a446ab;
+}
+
+.ps > span.evil {
+  --class-ps-span-background: #606060;
+  --class-ps-span-shadow: #3b3b3b;
+}
+
+.ps > span.ice {
+  --class-ps-span-background: #00ddff;
+  --class-ps-span-shadow: #028ac9;
+}
+
+.landingImage {
+  mask-image: linear-gradient(to bottom, #0000 0%, #000f 10%, #0000 90%);
+  width: 100%;
+}
+
+.landingTitle {
+  font-size: 4.5rem;
+  font-weight: 600;
+  margin-top: -10rem;
+  text-align: center;
+  background: linear-gradient(to right, #efc262 25%, #0a4797 55%, #28a8cb 70%);
+  background-clip: text;
+  color: transparent;
+}
+
+.landingTitle > img {
+  height: 5rem;
+  transform: scale(1.05) translate(6px, 10px);
+}
+
+.landingText {
+  font-size: 1.5rem;
+  margin-top: -4rem;
+  text-align: center;
+  color: #e36f3ed3;
+}
+
+.ppt {
+  display: flex;
+  flex-direction: column;
+}
+
+.slideshow img {
+  text-align: center;
+  margin: 2rem 0 0 6rem;
+  box-shadow: 0 0 20px #b7b7b7;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 10rem;
+  margin: 1rem 0 0 30rem;
+}
+
+.buttons button {
+  font-size: 1rem;
+  background-color: rgb(237, 237, 237);
+  border: none;
+  border-radius: 0.5rem;
+}

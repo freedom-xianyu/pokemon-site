@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Information Management System</title>
+    <script src="js/jquery-1.10.js"></script>
+    <link rel="stylesheet" href="/css/pokemonUsName.css" />
+    <script src="js/yonghu.js"></script>
+  </head>
+  <body>
+    <div>
+      <header>
+        <hr />
+        <h1>宝可梦中心用户管理系统</h1>
+        <hr />
+      </header>
+      <main>
+        <div>
+          <div id="ad55bt">
+            <button class="gre" id="add">新增</button>
+            <button class="red" id="delete">删除</button>
+          </div>
+          <table>
+            <tbody>
+              <tr id="thead">
+                <td><input type="checkbox" /></td>
+                <td>序号</td>
+                <td>手机号</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>操作</td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="navigate">
+            <p>
+              第<span id="pgn"></span>页,共<span id="en"></span>条
+              (每页最多显示10条)
+            </p>
+            <!--Number of entries-->
+            <div id="tpbt">
+              <button class="gre" id="lastpage">上一页</button>
+              <button class="red" id="nextpage">下一页</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div id="sbg"></div>
+    <!--增删改查时的阴影背景-->
+    <div class="achaesi" id="asi">
+      <!--    <form action="" method="post">-->
+      <h2>新增学生信息</h2>
+      <div class="ifm">
+        <div>
+          <label for="assn">手机号</label>
+          <input
+            id="assn"
+            type="text"
+            placeholder="11503080201"
+            required="required"
+            maxlength="11"
+            pattern="^[0-9]{11}$"
+            oninvalid="setCustomValidity('请输入11位的数字组合')"
+          />
+        </div>
+        <div>
+          <label for="asn">姓名</label>
+          <input
+            id="asn"
+            type="text"
+            placeholder="雷军"
+            required="required"
+            minlength="2"
+            maxlength="8"
+            pattern="^[\u4e00-\u9fa5]+$"
+            oninvalid="setCustomValidity('请输入正确的姓名')"
+          />
+        </div>
+
+        <div>
+          <label for="asag">年龄</label>
+          <input
+            id="asag"
+            type="number"
+            placeholder="20"
+            required="required"
+            min="0"
+            maxlength="2"
+            pattern="^[0-9]+$"
+            oninvalid="setCustomValidity('请输入正确的年龄')"
+          />
+        </div>
+      </div>
+      <hr />
+      <div class="scbt">
+        <button type="submit" id="submit">提交</button>
+        <button class="cancel">取消</button>
+      </div>
+      <!--    </form>-->
+    </div>
+    <div class="achaesi" id="chasi">
+      <!--    <form action="" method="post">-->
+      <h2>修改学生信息</h2>
+      <div class="ifm">
+        <div>
+          <label for="chassn">手机号</label>
+          <input
+            id="chassn"
+            type="text"
+            readonly
+            required="required"
+            maxlength="11"
+            pattern="^[0-9]{11}$"
+            oninvalid="setCustomValidity('请输入11位的数字组合')"
+          />
+        </div>
+        <div>
+          <label for="chasn">姓名</label>
+          <input
+            id="chasn"
+            type="text"
+            required="required"
+            minlength="2"
+            maxlength="8"
+            pattern="^[\u4e00-\u9fa5]+$"
+            oninvalid="setCustomValidity('请输入正确的姓名')"
+          />
+        </div>
+        <div>
+          <label for="chasag">年龄</label>
+          <input
+            id="chasag"
+            type="text"
+            required="required"
+            min="0"
+            maxlength="2"
+            pattern="^[0-9]+$"
+            oninvalid="setCustomValidity('请输入正确的年龄')"
+          />
+        </div>
+      </div>
+      <hr />
+      <div class="scbt">
+        <button type="submit" id="save">保存</button>
+        <button class="cancel">取消</button>
+      </div>
+      <!--    </form>-->
+    </div>
+    <div class="achaesi" id="chesi">
+      <h2>查看学生信息</h2>
+      <div class="ifm">
+        <div>
+          <label for="chessn">手机号</label>
+          <input type="text" readonly id="chessn" />
+        </div>
+        <div>
+          <label for="chesn">姓名</label>
+          <input type="text" readonly id="chesn" />
+        </div>
+        <div>
+          <label for="chesag">年龄</label>
+          <input type="text" readonly id="chesag" />
+        </div>
+      </div>
+      <hr />
+      <div class="scbt">
+        <button class="cancel">取消</button>
+      </div>
+    </div>
+  </body>
+</html>

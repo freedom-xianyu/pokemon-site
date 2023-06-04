@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="/css/globals.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/jquery-3.7.0.min.js"></script>
+    <script>
+      const pagesUrl = {
+        landing: "/pages/landing.html",
+        pokedex: "/pages/pokedex.html",
+        game: "/pages/game.html",
+        test: "/pages/test.html",
+      };
+      let currentPage = "";
+      const loadSubpage = (pageName) => {
+        $("#subpage").load(pagesUrl[pageName]);
+        try {
+          // 当 currentPage 为空字符串时，$() 会抛出错误，如果不捕获，会打断函数执行
+          $("#" + currentPage).removeClass("current");
+        } catch (e) {
+          // 如果上面那句抛出了错误，我们在这里接住它，就当无事发生
+        }
+        $("#" + pageName).addClass("current");
+        currentPage = pageName;
+      };
+      $(document).ready(() => {
+        loadSubpage("landing");
+      });
+    </script>
+    <title>宝可梦中心</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbarWrapper">
+        <div class="logo">
+          <img src="images/logo.svg" alt="Pokemon Logo" />
+        </div>
+        <ul class="links">
+          <li id="landing" class="yellow">
+            <button onclick="loadSubpage('landing')">首页</button>
+          </li>
+          <li id="pokedex" class="red">
+            <button onclick="loadSubpage('pokedex')">图鉴</button>
+          </li>
+          <li id="game" class="green">
+            <button onclick="loadSubpage('game')">游戏</button>
+          </li>
+          <li id="test" class="blue">
+            <button onclick="loadSubpage('test')">用户中心</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="docMain">
+      <section id="subpage"></section>
+    </main>
+  </body>
+</html>

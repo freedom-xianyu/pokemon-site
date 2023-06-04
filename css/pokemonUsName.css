@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: rgb(252, 126, 126);
+}
+.sbg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 1;
+}
+body {
+  background-color: #f0ece9;
+}
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+header h1 {
+  color: rgb(222, 207, 188);
+}
+header hr {
+  margin: 20px 20px 0;
+  background-color: #bc9470;
+  border: 2px solid #bc9470;
+  width: 30%;
+  height: 0;
+}
+main #adbt {
+  margin-left: 70px;
+}
+main button {
+  margin: 20px 5px;
+  width: 85px;
+  height: 40px;
+  color: white;
+  float: right;
+  right: 20px;
+}
+main button.gre {
+  background-color: #80c780;
+}
+main button.red {
+  background-color: #f28985;
+}
+main #navigate {
+  padding: 0 70px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+main #navigate p {
+  margin-top: 30px;
+}
+table {
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+  border-spacing: 0;
+}
+table tbody tr:first-of-type {
+  background-color: #dadee1 !important;
+  height: 60px;
+}
+table tbody tr {
+  height: 45px;
+}
+table tbody tr:nth-child(odd) {
+  background-color: #eef1f8;
+}
+table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+table tbody tr:not([id="thead"]):hover {
+  cursor: pointer;
+  background-color: #e9e9e9;
+}
+.achaesi {
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: white;
+  z-index: 2;
+  width: 500px;
+  height: 420px;
+}
+.achaesi h2 {
+  padding: 5px 20px;
+  font-size: large;
+  background-color: #555555;
+  color: white;
+}
+.achaesi .ifm {
+  width: 300px;
+  margin: 10px auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.achaesi .ifm div {
+  margin: 10px;
+}
+.achaesi .ifm div input {
+  width: 220px;
+  height: 20px;
+}
+.achaesi .scbt {
+  float: right;
+  margin-top: 6px;
+  margin-right: 30px;
+}
+.achaesi .scbt button:first-of-type {
+  width: 85px;
+  height: 36px;
+  background-color: #67b567;
+}
+.achaesi .scbt button:last-of-type {
+  width: 85px;
+  height: 36px;
+  background-color: white;
+}
+/*# sourceMappingURL=studentInformationManagementSystem.css.map */

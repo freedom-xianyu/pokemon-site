@@ -1,0 +1,121 @@
+:root {
+  font-size: 10px;
+
+  --color-background-main: #fcfcfc;
+  --color-text-h: #46374f;
+  --color-text-p: #7d6b87;
+}
+
+html {
+  background-color: var(--color-background-main);
+  color: var(--color-text-p);
+  font-family: "苹方", "微软雅黑", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-h);
+}
+
+h2 {
+  border-bottom: 1px silver solid;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar1 {
+  display: flex;
+  border-bottom: 1px silver solid;
+}
+
+.logo1 {
+  flex-grow: 0;
+}
+
+.logo1 > img {
+  height: 4.5rem;
+}
+
+.links1 {
+  flex-grow: 1;
+}
+
+ul.top1 {
+  display: flex;
+  flex-direction: row; /* 默认设置 */
+  justify-content: space-evenly;
+  align-items: end;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+button.pokedex1 {
+  --class-top1-li-height: 2rem;
+  background-color: rgb(251, 105, 105);
+  height: var(--class-top1-li-height);
+  line-height: var(--class-top1-li-height);
+  width: 6rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: none;
+}
+
+button.pokedex1:hover {
+  box-shadow: 0 0 5px rgb(172, 72, 72);
+  transition: box-shadow 500ms;
+}
+
+button.game1 {
+  background-color: rgb(244, 244, 46);
+  --class-top1-li-height: 4rem;
+  height: var(--class-top1-li-height);
+  line-height: var(--class-top1-li-height);
+  width: 6rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: none;
+}
+
+button.game1:hover {
+  box-shadow: 0 0 5px rgb(164, 164, 30);
+  transition: box-shadow 500ms;
+}
+
+button.animation1 {
+  background-color: rgb(105, 244, 46);
+  --class-top1-li-height: 4rem;
+  height: var(--class-top1-li-height);
+  line-height: var(--class-top1-li-height);
+  width: 6rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: none;
+}
+
+button.animation1:hover {
+  box-shadow: 0 0 5px rgb(71, 164, 31);
+  transition: box-shadow 500ms;
+}
+
+button.card1 {
+  background-color: rgb(124, 248, 255);
+  --class-top1-li-height: 4rem;
+  height: var(--class-top1-li-height);
+  line-height: var(--class-top1-li-height);
+  width: 6rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: none;
+}
+
+button.card1:hover {
+  box-shadow: 0 0 5px rgb(85, 172, 176);
+  transition: box-shadow 500ms;
+}
